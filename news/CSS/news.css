@@ -1,0 +1,86 @@
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  
+    color: #fff;
+}
+
+.header-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.header-link--button {
+    background-color: #ff6600;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.page-title h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.magazine-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.magazine-column {
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+}
+
+.article {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.article-title {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.article-title--large {
+    font-size: 22px;
+}
+
+.article-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.article-excerpt {
+    padding: 10px;
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+}
+
+.article-author {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.article-author-img img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.article-author-info dt {
+    font-weight: bold;
+}

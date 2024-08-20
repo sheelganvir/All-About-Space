@@ -18,10 +18,29 @@
     <link rel="stylesheet" href="./CSS/common/bg-animation.css" />
     <link rel="stylesheet" href="./CSS/common/loader.css" />
     <link rel="stylesheet" href="./CSS/common/footer.css" />
+    <link rel="stylesheet" href="./CSS/landingPage/feature.css" />
+    <style>
+        .ball-duplicate {
+            cursor: pointer;
+            fill: white;
+            stroke: #000;
+            stroke-width: 2;
+        }
+
+        .ball-label {
+            fill: black;
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            pointer-events: none;
+            /* Allows clicks to pass through to the circle */
+        }
+    </style>
 </head>
 
 <body onload="myFunction()">
-    
+
     <!-- ############## Page Loading Animation ############### -->
     <div id="loader-wrapper" class="load-wrapper" style="display:flex;">
         <div class="loader"></div>
@@ -51,13 +70,13 @@
 
                 <ul>
                     <li><button id="cart-btn">
-              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-                  fill="white" fill-rule="nonzero" />
-              </svg>
-              <span id="cart-badge">3</span>
-            </button></li>
+                            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                                    fill="white" fill-rule="nonzero" />
+                            </svg>
+                            <span id="cart-badge">3</span>
+                        </button></li>
                     <li><img id="user-img" src="images/userIcon.svg" alt="" /></li>
                 </ul>
 
@@ -79,16 +98,16 @@
                     <div class="product-meta">
                         <div style="display: flex;">
                             <button id="delete">
-                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <defs>
-                    <path
-                      d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
-                      id="a" />
-                  </defs>
-                  <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
-                </svg>
-              </button>
+                                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                                            id="a" />
+                                    </defs>
+                                    <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
+                                </svg>
+                            </button>
 
                         </div>
                         <button class="btn" style="width: 100%; font-size: 1rem;">Checkout</button>
@@ -110,7 +129,7 @@
         <section id="sectionone" class="screen">
             <div id="scene">
                 <div data-depth="0.1" class="bg">
-                    <img src="images/landingPageAssets/background.png" alt="" />
+                    <img src="images/landingPageAssets/background.jpg" alt="" />
                 </div>
                 <div data-depth="0.2" class="rock1">
                     <img src="images/landingPageAssets/rock.png" alt="" />
@@ -118,6 +137,7 @@
                 <div data-depth="1.2" class="earth">
                     <img src="images/landingPageAssets/earth.png" alt="" />
                 </div>
+
                 <div data-depth="0.1" class="text">
                     <h1>All About Space</h1>
                 </div>
@@ -130,6 +150,23 @@
             </div>
         </section>
         <!-- ############## Earth-Space Parallax Effect - End ############### -->
+        <!-- Features boxes start -->
+        <div class="feature">
+            <h1 class="header-section">Scroll to see a timeline animation</h1>
+
+            <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200">
+                <path class="line01 line" d="M 10 200 600 200"></path>
+                <path class="line02 line" d="M 10 400 600 400"></path>
+                <path class="line03 line" d="M 10 600 600 600"></path>
+                <path class="line04 line" d="M 10 800 600 800"></path>
+                <path class="line05 line" d="M 10 1000 600 1000"></path>
+                <text class="text01" x="30" y="190">2018</text>
+                <text class="text02" x="30" y="390">2019</text>
+                <text class="text03" x="30" y="590">2020</text>
+                <path class="path" d="M -5,0 Q 450 230 300 450 T 130 750 Q 100 850 300 1000 T 150 1200"></path>
+                <circle class="ball ball01" r="20"></circle>
+            </svg>
+        </div>
 
         <!-- ############## Image Slider ############### -->
         <section id="sectiontwo" class="screen">
@@ -221,116 +258,133 @@
                 <div class="col-rt-12">
                     <div class='carousel-container'>
                         <div class='carousel'>
-                            <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
-                            <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
-                            <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+                            <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1'
+                                name='carousel' type='radio'>
+                            <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel'
+                                type='radio'>
+                            <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel'
+                                type='radio'>
                             <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
-                  <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png" alt="">
-                </label>
+                                <label class='carousel__control carousel__control--forward'
+                                    for='carousel-slide-activator-2'>
+                                    <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png"
+                                        alt="">
+                                </label>
                             </div>
                             <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
-                  <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png" alt="">
-                </label>
-                                <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-3'>
-                  <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png" alt="">
-                </label>
+                                <label class='carousel__control carousel__control--backward'
+                                    for='carousel-slide-activator-1'>
+                                    <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png"
+                                        alt="">
+                                </label>
+                                <label class='carousel__control carousel__control--forward'
+                                    for='carousel-slide-activator-3'>
+                                    <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png"
+                                        alt="">
+                                </label>
                             </div>
                             <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-2'>
-                  <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png" alt="">
-                </label>
+                                <label class='carousel__control carousel__control--backward'
+                                    for='carousel-slide-activator-2'>
+                                    <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png"
+                                        alt="">
+                                </label>
                             </div>
                             <div class='carousel__screen'>
                                 <div class='carousel__track'>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/satellite-kit'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/telescope'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/books'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/hoodie'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/phone'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
-                                    <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div
+                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
                                         <div class='carousel-content'>
                                             <!-- ############## Pushable Button ############### -->
                                             <a href='/food'>
-                        <button class="button-pushable" role="button">
-                          <span class="button-shadow"></span>
-                          <span class="button-edge"></span>
-                          <span class="button-front text">
-                            Buy Now!
-                          </span>
-                        </button>
-                      </a>
+                                                <button class="button-pushable" role="button">
+                                                    <span class="button-shadow"></span>
+                                                    <span class="button-edge"></span>
+                                                    <span class="button-front text">
+                                                        Buy Now!
+                                                    </span>
+                                                </button>
+                                            </a>
                                             <!-- ############## Pushable Button - End ############### -->
                                         </div>
                                     </div>
@@ -344,20 +398,133 @@
         </section>
         <!-- ############## Products Carousel - End ############### -->
 
+
         <!-- ############## Page Footer ############### -->
         <div id="footer">
-            <p>Copyright &nbsp; &copy; &nbsp; spaceconnect.com</p>
+            <p>Copyright &nbsp; &copy; &nbsp; allaboutspace</p>
         </div>
         <!-- ############## Page Footer - End ############### -->
 
-        </div>
+    </div>
 
-        <!-- ############## Scripts ############### -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-        <script src="./JavaScript/index.js" type="text/javascript"></script>
-        <script src="./JavaScript/loader.js" type="text/javascript"></script>
-        <script src="./JavaScript/userBox.js" type="text/javascript"></script>
-        <!-- ############## Scripts - End ############### -->
+    <!-- ############## Scripts ############### -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const featureDiv = document.querySelector('.feature');
+            if (!featureDiv) return;
+    
+            const ball = featureDiv.querySelector('.ball');
+            const path = featureDiv.querySelector('.path');
+            const totalLength = path.getTotalLength();
+            const textElements = featureDiv.querySelectorAll('.text01, .text02, .text03');
+            const createdBalls = new Set();
+            let ballCounter = 1;
+    
+            path.style.strokeDasharray = totalLength;
+            path.style.strokeDashoffset = totalLength;
+    
+            function updateBallAndCreateDuplicates() {
+                const scrollY = window.scrollY;
+                const viewportHeight = window.innerHeight;
+                const scrollHeight = document.body.scrollHeight - viewportHeight;
+                const scrollFraction = scrollY / scrollHeight;
+                const pathLength = totalLength * scrollFraction;
+                path.style.strokeDashoffset = totalLength - pathLength;
+                const point = path.getPointAtLength(pathLength);
+                ball.setAttribute('cx', point.x);
+                ball.setAttribute('cy', point.y);
+    
+                textElements.forEach((textElement) => {
+                    const textY = parseFloat(textElement.getAttribute('y'));
+                    const id = textElement.className.baseVal;
+    
+                    if (Math.abs(point.y - textY) < 10 && !createdBalls.has(id)) {
+                        createBallDuplicate(point.x, point.y, getLabelForId(id));
+                        ballCounter++;
+                        createdBalls.add(id);
+                    }
+                });
+            }
+    
+            function getLabelForId(id) {
+                switch (id) {
+                    case 'text01':
+                        return 'Learning Mode';
+                    case 'text02':
+                        return 'Simulation';
+                    case 'text03':
+                        return 'News';
+                    default:
+                        return `ball${ballCounter}`;
+                }
+            }
+    
+            function createBallDuplicate(x, y, label) {
+                const svg = featureDiv.querySelector('svg');
+                const duplicateBall = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                duplicateBall.setAttribute('r', '40');
+                duplicateBall.setAttribute('cx', x);
+                duplicateBall.setAttribute('cy', y);
+                duplicateBall.classList.add('ball-duplicate');
+                duplicateBall.style.visibility = 'hidden';
+                svg.appendChild(duplicateBall);
+    
+                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                text.setAttribute('x', x);
+                text.setAttribute('y', y);
+                text.classList.add('ball-label');
+                text.textContent = label;
+                text.style.visibility = 'hidden';
+                svg.appendChild(text);
+    
+                // Debugging statement
+                console.log(`Creating ball with label: ${label} at (${x}, ${y})`);
+    
+                duplicateBall.addEventListener('click', function () {
+                    console.log(`Clicked on ball with label: ${label}`); // Debugging line
+                    switch (label) {
+                        case 'Learning Mode':
+                            console.log('Redirecting to Learning Mode');
+                            window.location.href = './learning-mode.html';
+                            break;
+                        case 'Simulation':
+                            console.log('Redirecting to Simulation');
+                            window.location.href = './simulation.html';
+                            break;
+                        case 'News':
+                            console.log('Redirecting to News');
+                            window.location.href = './news.html';
+                            break;
+                        default:
+                            console.log(`Redirecting to ${label}`);
+                            window.location.href = `./${label}.html`;
+                            break;
+                    }
+                });
+    
+                requestAnimationFrame(() => {
+                    duplicateBall.style.visibility = 'visible';
+                    text.style.visibility = 'visible';
+                });
+            }
+    
+            function onScroll() {
+                requestAnimationFrame(updateBallAndCreateDuplicates);
+            }
+    
+            window.addEventListener('scroll', onScroll);
+            updateBallAndCreateDuplicates();
+        });
+    </script>
+    
+    
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="./JavaScript/index.js" type="text/javascript"></script>
+    <script src="./JavaScript/loader.js" type="text/javascript"></script>
+    <script src="./JavaScript/userBox.js" type="text/javascript"></script>
+
+    <!-- ############## Scripts - End ############### -->
 
 </body>
 

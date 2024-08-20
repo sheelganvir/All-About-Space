@@ -1,0 +1,38 @@
+
+  
+  .header-section {
+    margin: 100px auto 0;
+  }
+  
+  svg {
+    width: 100%; /* Use 100% to allow the SVG to take up full width of its container */
+    overflow: visible;
+  }
+  
+  text {
+    fill: white;
+    font-size: 15px;
+    font-family: "Signika Negative", sans-serif;
+  }
+  .ball {
+    fill: white;
+    visibility: visible; /* Make sure it's visible for testing */
+  }
+  
+  .ball-duplicate {
+    fill: white; /* Or any other color to differentiate from the original ball */
+    visibility: hidden; /* Initially hidden */
+  }
+  
+  .path {
+    fill: none;
+    stroke: white;
+    stroke-width: 10px;
+    stroke-dasharray: 1000; /* Adjust if needed */
+    stroke-dashoffset: 1000; /* Adjust if needed */
+    transition: stroke-dashoffset 0.2s ease; /* Shortened transition duration */
+  }
+  
+  
+  /* Existing styles... */
+  

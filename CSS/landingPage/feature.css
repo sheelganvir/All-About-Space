@@ -1,38 +1,350 @@
+.feature-cards :root {
+    --card-height: 30vw;
+    --card-margin: 4vw;
+    --card-top-offset: 1em;
+    --numcards: 4;
+    --outline-width: 0px;
+  }
 
-  
-  .header-section {
-    margin: 100px auto 0;
+  .feature-cards .feature-box > ul{
+    padding-top: 20px;
+    max-width: 10%;
+
   }
   
-  svg {
-    width: 100%; /* Use 100% to allow the SVG to take up full width of its container */
-    overflow: visible;
+  .feature-cards #cards {
+    padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+    margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
   }
   
-  text {
-    fill: white;
-    font-size: 15px;
-    font-family: "Signika Negative", sans-serif;
-  }
-  .ball {
-    fill: white;
-    visibility: visible; /* Make sure it's visible for testing */
+  .feature-cards #card_1 {
+    --index: 1;
   }
   
-  .ball-duplicate {
-    fill: white; /* Or any other color to differentiate from the original ball */
-    visibility: hidden; /* Initially hidden */
+ .feature-cards  #card_2 {
+    --index: 2;
   }
   
-  .path {
-    fill: none;
-    stroke: white;
-    stroke-width: 10px;
-    stroke-dasharray: 1000; /* Adjust if needed */
-    stroke-dashoffset: 1000; /* Adjust if needed */
-    transition: stroke-dashoffset 0.2s ease; /* Shortened transition duration */
+  .feature-cards#card_3 {
+    --index: 3;
+  }
+  
+  .feature-cards #card_4 {
+    --index: 4;
+  }
+  
+  .feature-cards .card {
+    position: sticky;
+    top: 0;
+    padding-top: calc(var(--index) * var(--card-top-offset));
+  }
+  
+  @supports (animation-timeline: works) {
+  
+    @scroll-timeline cards-element-scrolls-in-body {
+      source: selector(body);
+      scroll-offsets:
+        /* Start when the start edge touches the top of the scrollport */
+        selector(#cards) start 1,
+        /* End when the start edge touches the start of the scrollport */
+        selector(#cards) start 0
+      ;
+      start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+      end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+      time-range: 4s;
+    }
+  
+    .feature-cards .card {
+      --index0: calc(var(--index) - 1); /* 0-based index */
+      --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+      --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    }
+    
+    .feature-cards .card__content {
+      transform-origin: 50% 0%;
+      will-change: transform;
+  
+      --duration: calc(var(--reverse-index0) * 1s);
+      --delay: calc(var(--index0) * 1s);
+  
+      animation: var(--duration) linear scale var(--delay) forwards;
+      animation-timeline: cards-element-scrolls-in-body;
+    }
+  
+    @keyframes scale {
+      to {
+        transform:
+          scale(calc(
+            1.1
+            -
+            calc(0.1 * var(--reverse-index))
+          ));
+      }
+    }
   }
   
   
-  /* Existing styles... */
   
+  
+  .feature-cards .newheader,
+  main {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  
+  .feature-cards .newheader {
+    margin-top: 100px;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  .feature-cards #cards {
+    list-style: none;
+    outline: calc(var(--outline-width) * 10) solid blue;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--numcards), var(--card-height));
+    gap: var(--card-margin);
+  }
+  
+  .feature-cards .card {
+    outline: var(--outline-width) solid hotpink;
+  }
+  
+  .feature-cards .card__content {
+    box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    color: rgb(10, 5, 7);
+    border-radius: 1em;
+    overflow: hidden;
+  
+    display: grid;
+    grid-template-areas: "text img";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  
+    align-items: stretch;
+    outline: var(--outline-width) solid lime;
+  }
+  
+  .feature-cards .card__content > div {
+    grid-area: text;
+    width: 80%;
+    place-self: center;
+    text-align: left;
+  
+    display: grid;
+    gap: 1em;
+    place-items: start;
+  }
+  
+  .feature-cards .card__content > figure {
+    grid-area: img;
+    overflow: hidden;
+  }
+  
+  .feature-cards .card__content > figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .feature-cards h1 {
+    font-weight: 300;
+    font-size: 3.5em;
+  }
+  
+  .feature-cards h2 {
+    font-weight: 300;
+    font-size: 2.5em;
+  }
+  
+ .feature-cards  p {
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 1.42;
+  }
+  
+  .feature-cards .btn {
+    background: rgb(188 87 36);
+    color: rgb(255 255 255);
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 0.25em;
+  }
+  
+  .feature-cards aside {
+    width: 50vw;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .feature-cards aside p {
+    margin-bottom: 1em;
+  }
+
+  /* From Uiverse.io by Yaksh37 */ 
+  .feature-cards button#space-btn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  outline: 0;
+  border-radius: 11px;
+  background: #03001e;
+  background: linear-gradient(80deg, #ffcbf2, #ec38bc, #7303c0, #03001e);
+  cursor: pointer;
+}
+
+.feature-cards .btn-container {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  overflow: visible;
+}
+
+.feature-cards .btn-container::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: -1;
+  background: #03001e;
+  background: linear-gradient(80deg, #ffcbf2, #ec38bc, #7303c0, #03001e);
+  filter: blur(20px);
+  opacity: 0;
+}
+
+.feature-cards .btn-container:hover {
+  transform: scale(1.1);
+  transition: all 0.6s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.feature-cards .btn-container:hover:after {
+  transition: all 0.6s cubic-bezier(0.15, 0.83, 0.66, 1);
+  opacity: 1;
+}
+
+.feature-cards .btn-container:active {
+  transform: scale(1);
+}
+
+.feature-cards .btn-container:active:after {
+  opacity: 0;
+}
+
+.feature-cards button span {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.feature-cards button#space-btn div.star {
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border-radius: 50%;
+  animation: blink 2s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+.feature-cards button#space-btn div.shooting-star {
+  width: 80px;
+  height: 1px;
+  position: absolute;
+  background: linear-gradient(80deg, #ffffffff, #ffffff00);
+  border-radius: 50%;
+  transform: rotate(-40deg);
+  opacity: 0;
+}
+
+.feature-cards button#space-btn div.shooting-star-1 {
+  animation: fallingStar1 4s 6s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+.feature-cards button#space-btn div.shooting-star-2 {
+  animation: fallingStar2 2s 10s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+.feature-cards button#space-btn div.shooting-star-3 {
+  animation: fallingStar3 8s 20s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+.feature-cards button#space-btn div.shooting-star-4 {
+  animation: fallingStar4 4s 6s cubic-bezier(0.15, 0.83, 0.66, 1) infinite;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 10px 0 white;
+  }
+
+  50% {
+    box-shadow: 0 0 10px 2px white;
+  }
+
+  100% {
+    box-shadow: 0 0 10px 0 white;
+  }
+}
+
+@keyframes fallingStar1 {
+  0% {
+    top: -10px;
+    left: 220px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 200px;
+    left: -20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fallingStar2 {
+  0% {
+    top: -10px;
+    left: 150px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 200px;
+    left: -90px;
+    opacity: 1;
+  }
+}
+
+@keyframes fallingStar3 {
+  0% {
+    top: -10px;
+    left: 80px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 200px;
+    left: -160px;
+    opacity: 1;
+  }
+}
+
+@keyframes fallingStar4 {
+  0% {
+    top: -10px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 200px;
+    left: -240px;
+    opacity: 1;
+  }
+}

@@ -2,553 +2,928 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>All About Space</title>
-    <link rel="shortcut icon" href="./images/rocket-icon.png" type="image/png">
-    <link rel="stylesheet" href="./CSS/landingPage/style.css" />
-    <link rel="stylesheet" href="./CSS/common/navBar.css" />
-    <link rel="stylesheet" href="./CSS/landingPage/parallaxScene.css" />
-    <link rel="stylesheet" href="./CSS/landingPage/slider.css" />
-    <link rel="stylesheet" href="./CSS/landingPage/carousel.css" />
-    <link rel="stylesheet" href="./CSS/landingPage/pushable-button.css" />
-    <link rel="stylesheet" href="./CSS/common/cartBox.css" />
-    <link rel="stylesheet" href="./CSS/common/userBox.css" />
-    <link rel="stylesheet" href="./CSS/common/bg-animation.css" />
-    <link rel="stylesheet" href="./CSS/common/loader.css" />
-    <link rel="stylesheet" href="./CSS/common/footer.css" />
-    <link rel="stylesheet" href="./CSS/landingPage/feature.css" />
-    <style>
-        .ball-duplicate {
-            cursor: pointer;
-            fill: white;
-            stroke: #000;
-            stroke-width: 2;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description"
+    content="This space exploration website is dedicated to bridging the gap between the rapidly advancing field of space exploration and the knowledge available to the general public. Our mission is to create a minimalistic, beginner-friendly web app that makes learning about space accessible, engaging, and accurate.">
+  <meta name="author" content="All About Space">
+  <title>All About Space</title>
+  <link rel="shortcut icon" href="./images/rocket-icon.png" type="image/png">
+  <link rel="stylesheet" href="./CSS/landingPage/style.css" />
+  <link rel="stylesheet" href="./CSS/common/navBar.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/parallaxScene.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/slider.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/carousel.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/pushable-button.css" />
+  <link rel="stylesheet" href="./CSS/common/cartBox.css" />
+  <link rel="stylesheet" href="./CSS/common/userBox.css" />
+  <link rel="stylesheet" href="./CSS/common/bg-animation.css" />
+  <link rel="stylesheet" href="./CSS/common/loader.css" />
+  <link rel="stylesheet" href="./CSS/common/footer.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/feature.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/newparallax.css" />
 
-        .ball-label {
-            fill: black;
-            font-size: 14px;
-            font-weight: bold;
-            text-anchor: middle;
-            dominant-baseline: middle;
-            pointer-events: none;
-            /* Allows clicks to pass through to the circle */
-        }
+  <style>
+    .ball-duplicate {
+      cursor: pointer;
+      fill: white;
+      stroke: #000;
+      stroke-width: 2;
+    }
 
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+    .ball-label {
+      fill: black;
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+      /* Allows clicks to pass through to the circle */
+    }
 
-        ::-webkit-scrollbar-track {
-            background: #041E42;
-        }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-        ::-webkit-scrollbar-thumb {
-            background: #005A9C;
-        }
+    ::-webkit-scrollbar-track {
+      background: #040720;
+    }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #B9D9EB;
-        }
-    </style>
+    ::-webkit-scrollbar-thumb {
+      background: #B9D9EB;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7393B3;
+    }
+  </style>
 </head>
 
 <body onload="myFunction()">
 
-    <!-- ############## Page Loading Animation ############### -->
-    <div id="loader-wrapper" class="load-wrapper" style="display:flex;">
-        <div class="loader"></div>
-    </div>
-    <!-- ############## Page Loading Animation - End ############### -->
-    <audio loop autoplay src="/audio/space_music.mp3"></audio>
-    <div id="body" style="display:none;">
-        <!-- ############## Background Star Animation ############### -->
-        <section class="wrapper">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-        </section>
-        <!-- ############## Background Star Animation - End ############### -->
+  <!-- ############## Page Loading Animation ############### -->
+  <div id="loader-wrapper" class="load-wrapper" style="display:flex;">
+    <div class="loader"></div>
+  </div>
+  <!-- ############## Page Loading Animation - End ############### -->
+  <audio loop autoplay src="/audio/space_music.mp3"></audio>
+  <div id="body" style="display:none;">
+    <!-- ############## Background Star Animation ############### -->
+    <section class="wrapper">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- ############## Background Star Animation - End ############### -->
 
-        <!-- ############## Navigation Bar ############### -->
-        <nav>
-            <div class="logo"><a href="#">All About Space</a></div>
-            <ul id="navbar-links">
-                <li><a class="navbar-a1" href="#">Home</a></li>
-                <li><a class='navbar-a1' href='/aboutus/aboutus.html'>About Us</a></li>
-                <li><a class="navbar-a1" href="https://blogs.nasa.gov/" target="_blank">Blog</a></li>
-                <li><a class='navbar-a1' href='/contactus/contactus.html'>Contact Us</a></li>
+    <!-- ############## Navigation Bar ############### -->
+    <nav>
+      <div class="logo"><a href="#">All About Space</a></div>
+      <ul id="navbar-links">
+        <li><a class="navbar-a1" href="#">Home</a></li>
+        <li><a class='navbar-a1' href='/aboutus/aboutus.html'>About Us</a></li>
+        <li><a class="navbar-a1" href="https://blogs.nasa.gov/" target="_blank">Blog</a></li>
+        <li><a class='navbar-a1' href='/contactus/contactus.html'>Contact Us</a></li>
 
-            </ul>
-            <div class="nav-links">
+      </ul>
+      <div class="nav-links">
 
-                <ul>
-                    <li><button id="cart-btn">
-                            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-                                    fill="white" fill-rule="nonzero" />
-                            </svg>
-                            <span id="cart-badge">3</span>
-                        </button></li>
-                    <li><img id="user-img" src="images/userIcon.svg" alt="" /></li>
-                </ul>
+        <ul>
+          <li><button id="cart-btn">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="white" fill-rule="nonzero" />
+              </svg>
+              <span id="cart-badge">3</span>
+            </button></li>
+          <li><img id="user-img" src="images/userIcon.svg" alt="" /></li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- ############## Navigation Bar - End ############### -->
+
+    <!-- ############## Shopping Cart Box ############### -->
+    <article id="cart">
+      <div class="heading-cart">
+        <h3>Cart</h3>
+
+      </div>
+      <div class="content-cart">
+
+
+        <p style="font-weight:700" id="msg">Your cart is empty.</p>
+        <div class="product">
+          <div class="product-meta">
+            <div style="display: flex;">
+              <button id="delete">
+                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                    <path
+                      d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                      id="a" />
+                  </defs>
+                  <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
+                </svg>
+              </button>
 
             </div>
-        </nav>
-        <!-- ############## Navigation Bar - End ############### -->
-
-        <!-- ############## Shopping Cart Box ############### -->
-        <article id="cart">
-            <div class="heading-cart">
-                <h3>Cart</h3>
-
-            </div>
-            <div class="content-cart">
+            <button class="btn" style="width: 100%; font-size: 1rem;">Checkout</button>
+          </div>
+        </div>
+    </article>
+    <!-- ############## Shopping Cart Box - End ############### -->
 
 
-                <p style="font-weight:700" id="msg">Your cart is empty.</p>
-                <div class="product">
-                    <div class="product-meta">
-                        <div style="display: flex;">
-                            <button id="delete">
-                                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <defs>
-                                        <path
-                                            d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
-                                            id="a" />
-                                    </defs>
-                                    <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
-                                </svg>
-                            </button>
+    <!-- ############## User Image Hover Box ############### -->
+    <article id="guest">
+      <div class="heading-cart">
+        <h3>You are browsing as a guest.</h3>
+      </div>
+    </article>
+    <!-- ############## User Image Hover Box - End ############### -->
 
-                        </div>
-                        <button class="btn" style="width: 100%; font-size: 1rem;">Checkout</button>
-                    </div>
-                </div>
-        </article>
-        <!-- ############## Shopping Cart Box - End ############### -->
-
-
-        <!-- ############## User Image Hover Box ############### -->
-        <article id="guest">
-            <div class="heading-cart">
-                <h3>You are browsing as a guest.</h3>
-            </div>
-        </article>
-        <!-- ############## User Image Hover Box - End ############### -->
-
-        <!-- ############## Earth-Space Parallax Effect ############### -->
-        <section id="sectionone" class="screen">
-            <div id="scene">
-                <div data-depth="0.1" class="bg">
-                    <img src="images/landingPageAssets/background.jpg" alt="" />
-                </div>
-                <div data-depth="0.2" class="rock1">
-                    <img src="images/landingPageAssets/rock.png" alt="" />
-                </div>
-                <div data-depth="1.2" class="earth">
-                    <img src="images/landingPageAssets/earth.png" alt="" />
-                </div>
-
-                <div data-depth="0.1" class="text">
-                    <h1>All About Space</h1>
-                </div>
-                <div data-depth="0.4" class="mid">
-                    <img src="images/landingPageAssets/mid.png" alt="" />
-                </div>
-                <div data-depth="0.1" class="fore">
-                    <img src="images/landingPageAssets/foreground.png" alt="" />
-                </div>
-            </div>
-        </section>
-        <!-- ############## Earth-Space Parallax Effect - End ############### -->
-        <!-- Features boxes start -->
-        <div class="feature">
-            <h1 class="header-section">Scroll to see a timeline animation</h1>
-
-            <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200">
-                <path class="line01 line" d="M 10 200 600 200"></path>
-                <path class="line02 line" d="M 10 400 600 400"></path>
-                <path class="line03 line" d="M 10 600 600 600"></path>
-                <path class="line04 line" d="M 10 800 600 800"></path>
-                <path class="line05 line" d="M 10 1000 600 1000"></path>
-                <text class="text01" x="30" y="190"></text>
-                <text class="text02" x="30" y="390"></text>
-                <text class="text03" x="30" y="590"></text>
-                <path class="path" d="M -5,0 Q 450 230 300 450 T 130 750 Q 100 850 300 1000 T 150 1200"></path>
-                <circle class="ball ball01" r="20"></circle>
-            </svg>
+    <!-- ############## Earth-Space Parallax Effect ############### -->
+    <section id="sectionone" class="screen">
+      <div id="scene">
+        <div data-depth="0.1" class="bg">
+          <img src="images/landingPageAssets/background.jpg" alt="" />
+        </div>
+        <div data-depth="0.2" class="rock1">
+          <img src="images/landingPageAssets/rock.png" alt="" />
+        </div>
+        <div data-depth="1.2" class="earth">
+          <img src="images/landingPageAssets/earth.png" alt="" />
         </div>
 
-        <!-- ############## Image Slider ############### -->
-        <section id="sectiontwo" class="screen">
-            <div id="slider">
-                <input type="radio" name="slider" id="slide1" checked>
-                <input type="radio" name="slider" id="slide2">
-                <input type="radio" name="slider" id="slide3">
-                <input type="radio" name="slider" id="slide4">
-                <div id="slides">
-                    <div id="overflow">
-                        <div class="inner">
-                            <a href='/satellite-kit'>
-                                <div class="slide slide_1">
-                                    <div class="slide-content">
-                                        <h2 class="slide-text">Special Deals</h2>
-                                        <p>Upto 50% Off on Satellite Kits this Diwali!</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href='/hoodie'>
-                                <div class="slide slide_2">
-                                    <div class="slide-content">
-                                        <h2 class="slide-text">Explore Our Apparel Range</h2>
-                                        <p>Space-theme apparels for Men, Women and Kids</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href='/books'>
-                                <div class="slide slide_3">
-                                    <div class="slide-content">
-                                        <h2 class="slide-text">Books</h2>
-                                        <p>Explore a Wide Range of Astronomy and Space Books</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href='/telescope'>
-                                <div class="slide slide_4">
-                                    <div class="slide-content">
-                                        <h2 class="slide-text">Telescopes</h2>
-                                        <p>Explore the New Arrivals!</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="controls">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                    <label for="slide4"></label>
-                </div>
-                <div id="bullets">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                    <label for="slide4"></label>
-                </div>
-            </div>
+        <div data-depth="0.1" class="text">
+          <h1>All About Space</h1>
+        </div>
+        <div data-depth="0.4" class="mid">
+          <img src="images/landingPageAssets/mid.png" alt="" />
+        </div>
+        <div data-depth="0.1" class="fore">
+          <img src="images/landingPageAssets/foreground.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- ############## Earth-Space Parallax Effect - End ############### -->
 
-            <!-- ############## Rock Parallax ############### -->
-            <div>
-                <div class="rockbg1">
-                    <img src="images/landingPageAssets/rock.png" alt="">
-                </div>
-                <div class="planet-links"></div>
-            </div>
-            <!-- ############## Rock Parallax - End ############### -->
+    <!-- Features boxes start -->
+    <div class="feature-cards">
+      <div class="newheader" style="margin-top: 100px;
+            height: 100vh;
+            display: grid;
+            place-items: center;">
+        <div>
+          <h1 style="color: white;">Features</h1>
+          <p style="color: white; text-align: center;">Scroll down to see the effect.</p>
+        </div>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+          type="module"></script>
 
-        </section>
-        <!-- ############## Image Slider - End ############### -->
+        <dotlottie-player src="https://lottie.host/fa013e8d-16e4-4911-9e71-fa390e302e9c/tI5iJ7HfTP.json"
+          background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+      </div>
+      <main>
+        <ul id="cards">
+          <li class="card" id="card_1">
+            <div class="card__content"
+              style="background-color: #130f40;
+              background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
+              <div>
+                <h2 style="color: white;">Learning Mode</h2>
+                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="btn-container">
+                  <button id="space-btn" name="space-button" type="submit">
 
-        <!-- ############## Products Carousel Heading ############### -->
-        <header class="ScriptHeader">
-            <div class="rt-container">
-                <div class="col-rt-12">
-                    <div class="rt-heading">
-                        <h1>Featured Products</h1>
-                        <h2>Upto 50% Off in Festive Season</h2>
-                    </div>
+                    <span><a href="#" style="color: white;">Let's Go to Space</a></span>
+                    <div
+                      style="position: absolute; left: 119.273px; top: 18.0747px; animation-delay: 3.37051s; transform: scale(0.196521);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 166.774px; top: 47.4519px; animation-delay: 3.03913s; transform: scale(0.33078);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 238.677px; top: 19.6434px; animation-delay: 3.85796s; transform: scale(1.29037);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 22.2022px; top: 4.69534px; animation-delay: 4.9415s; transform: scale(1.82231);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 206.74px; top: 40.7685px; animation-delay: 1.59195s; transform: scale(1.01375);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 241.531px; top: 14.2516px; animation-delay: 1.67616s; transform: scale(0.811597);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 14.754px; top: 25.2924px; animation-delay: 0.0348248s; transform: scale(0.102529);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.444px; top: 43.9803px; animation-delay: 1.5106s; transform: scale(0.16088);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 95.948px; top: 54.8942px; animation-delay: 3.18662s; transform: scale(1.7822);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.3484px; top: 36.5984px; animation-delay: 4.30868s; transform: scale(1.16326);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.622px; top: 20.0923px; animation-delay: 2.83829s; transform: scale(1.27781);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 142.1px; top: 22.3542px; animation-delay: 2.73988s; transform: scale(1.62715);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 145.079px; top: 6.97553px; animation-delay: 0.0408754s; transform: scale(0.468075);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 6.67886px; top: 38.4849px; animation-delay: 3.84019s; transform: scale(0.272217);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 201.17px; top: 39.9168px; animation-delay: 2.93587s; transform: scale(0.521258);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 224.215px; top: 42.9903px; animation-delay: 0.895495s; transform: scale(0.0458902);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 42.2308px; top: 9.78383px; animation-delay: 4.58407s; transform: scale(0.0422065);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 91.2734px; top: 14.0408px; animation-delay: 2.05927s; transform: scale(0.11997);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 35.6985px; top: 52.6403px; animation-delay: 3.07343s; transform: scale(0.672992);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 76.4191px; top: 48.453px; animation-delay: 2.35679s; transform: scale(1.46957);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.503px; top: 4.18267px; animation-delay: 1.43409s; transform: scale(0.606616);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 221.039px; top: 54.2493px; animation-delay: 2.92356s; transform: scale(0.638665);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 185.612px; top: 44.3px; animation-delay: 1.36401s; transform: scale(1.65012);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 154.027px; top: 45.9848px; animation-delay: 3.723s; transform: scale(1.4118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.591px; top: 4.95194px; animation-delay: 0.363098s; transform: scale(0.52369);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 236.028px; top: 11.1663px; animation-delay: 3.67493s; transform: scale(0.956478);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 110.241px; top: 20.2684px; animation-delay: 2.94906s; transform: scale(1.2193);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 12.602px; top: 19.8836px; animation-delay: 4.072s; transform: scale(1.49026);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.0911px; top: 37.9746px; animation-delay: 1.02002s; transform: scale(1.41008);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 62.3096px; top: 9.64604px; animation-delay: 3.9445s; transform: scale(0.231214);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 44.7189px; top: 32.4307px; animation-delay: 4.78921s; transform: scale(0.359408);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 191.866px; top: 27.151px; animation-delay: 1.34451s; transform: scale(1.13484);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 47.6744px; top: 3.00604px; animation-delay: 1.04567s; transform: scale(0.682023);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 98.6225px; top: 49.6115px; animation-delay: 2.41384s; transform: scale(1.96254);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 57.4785px; top: 29.6588px; animation-delay: 3.3569s; transform: scale(1.53118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 13.2213px; top: 24.538px; animation-delay: 1.69582s; transform: scale(1.6236);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 131.656px; top: 31.1837px; animation-delay: 1.29918s; transform: scale(1.84486);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 56.9067px; top: 51.9904px; animation-delay: 4.74375s; transform: scale(0.749788);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 82.8361px; top: 54.3876px; animation-delay: 1.28648s; transform: scale(0.566118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 193.213px; top: 43.9428px; animation-delay: 0.390178s; transform: scale(1.411);"
+                      class="star"></div>
+                    <div style="animation-delay: 1.2122s;" class="shooting-star shooting-star-1"></div>
+                    <div style="animation-delay: 0.777895s;" class="shooting-star shooting-star-2"></div>
+                    <div style="animation-delay: 4.90483s;" class="shooting-star shooting-star-3"></div>
+                    <div style="animation-delay: 3.66012s;" class="shooting-star shooting-star-4"></div>
+                  </button>
                 </div>
+
+              </div>
+              <figure style="height: 80vh;  padding-top: 30%;">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                  type="module"></script>
+
+                <dotlottie-player src="https://lottie.host/b24ec53d-d38c-4398-985b-89c074ffd4be/a1oOdHcF5r.json"
+                  background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                  autoplay></dotlottie-player>
+              </figure>
             </div>
+          </li>
+          <li class="card" id="card_2">
+            <div class="card__content"
+              style="background-color: #130f40;
+              background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
+              <div>
+                <h2 style="color: white;">Simulations</h2>
+                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="btn-container">
+                  <button id="space-btn" name="space-button" type="submit">
+                    <span><a href="#" style="color: white;">Let's Go to Space</a></span>
+                    <div
+                      style="position: absolute; left: 119.273px; top: 18.0747px; animation-delay: 3.37051s; transform: scale(0.196521);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 166.774px; top: 47.4519px; animation-delay: 3.03913s; transform: scale(0.33078);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 238.677px; top: 19.6434px; animation-delay: 3.85796s; transform: scale(1.29037);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 22.2022px; top: 4.69534px; animation-delay: 4.9415s; transform: scale(1.82231);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 206.74px; top: 40.7685px; animation-delay: 1.59195s; transform: scale(1.01375);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 241.531px; top: 14.2516px; animation-delay: 1.67616s; transform: scale(0.811597);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 14.754px; top: 25.2924px; animation-delay: 0.0348248s; transform: scale(0.102529);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.444px; top: 43.9803px; animation-delay: 1.5106s; transform: scale(0.16088);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 95.948px; top: 54.8942px; animation-delay: 3.18662s; transform: scale(1.7822);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.3484px; top: 36.5984px; animation-delay: 4.30868s; transform: scale(1.16326);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.622px; top: 20.0923px; animation-delay: 2.83829s; transform: scale(1.27781);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 142.1px; top: 22.3542px; animation-delay: 2.73988s; transform: scale(1.62715);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 145.079px; top: 6.97553px; animation-delay: 0.0408754s; transform: scale(0.468075);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 6.67886px; top: 38.4849px; animation-delay: 3.84019s; transform: scale(0.272217);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 201.17px; top: 39.9168px; animation-delay: 2.93587s; transform: scale(0.521258);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 224.215px; top: 42.9903px; animation-delay: 0.895495s; transform: scale(0.0458902);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 42.2308px; top: 9.78383px; animation-delay: 4.58407s; transform: scale(0.0422065);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 91.2734px; top: 14.0408px; animation-delay: 2.05927s; transform: scale(0.11997);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 35.6985px; top: 52.6403px; animation-delay: 3.07343s; transform: scale(0.672992);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 76.4191px; top: 48.453px; animation-delay: 2.35679s; transform: scale(1.46957);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.503px; top: 4.18267px; animation-delay: 1.43409s; transform: scale(0.606616);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 221.039px; top: 54.2493px; animation-delay: 2.92356s; transform: scale(0.638665);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 185.612px; top: 44.3px; animation-delay: 1.36401s; transform: scale(1.65012);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 154.027px; top: 45.9848px; animation-delay: 3.723s; transform: scale(1.4118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.591px; top: 4.95194px; animation-delay: 0.363098s; transform: scale(0.52369);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 236.028px; top: 11.1663px; animation-delay: 3.67493s; transform: scale(0.956478);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 110.241px; top: 20.2684px; animation-delay: 2.94906s; transform: scale(1.2193);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 12.602px; top: 19.8836px; animation-delay: 4.072s; transform: scale(1.49026);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.0911px; top: 37.9746px; animation-delay: 1.02002s; transform: scale(1.41008);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 62.3096px; top: 9.64604px; animation-delay: 3.9445s; transform: scale(0.231214);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 44.7189px; top: 32.4307px; animation-delay: 4.78921s; transform: scale(0.359408);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 191.866px; top: 27.151px; animation-delay: 1.34451s; transform: scale(1.13484);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 47.6744px; top: 3.00604px; animation-delay: 1.04567s; transform: scale(0.682023);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 98.6225px; top: 49.6115px; animation-delay: 2.41384s; transform: scale(1.96254);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 57.4785px; top: 29.6588px; animation-delay: 3.3569s; transform: scale(1.53118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 13.2213px; top: 24.538px; animation-delay: 1.69582s; transform: scale(1.6236);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 131.656px; top: 31.1837px; animation-delay: 1.29918s; transform: scale(1.84486);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 56.9067px; top: 51.9904px; animation-delay: 4.74375s; transform: scale(0.749788);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 82.8361px; top: 54.3876px; animation-delay: 1.28648s; transform: scale(0.566118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 193.213px; top: 43.9428px; animation-delay: 0.390178s; transform: scale(1.411);"
+                      class="star"></div>
+                    <div style="animation-delay: 1.2122s;" class="shooting-star shooting-star-1"></div>
+                    <div style="animation-delay: 0.777895s;" class="shooting-star shooting-star-2"></div>
+                    <div style="animation-delay: 4.90483s;" class="shooting-star shooting-star-3"></div>
+                    <div style="animation-delay: 3.66012s;" class="shooting-star shooting-star-4"></div>
+                  </button>
+                </div>
+
+              </div>
+              <figure style="height: 80vh;  padding-top: 30%;">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                  type="module"></script>
+
+                <dotlottie-player src="https://lottie.host/677a28a8-cc48-4168-97a9-1e5888412d06/FEe2RhUtyO.json"
+                  background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                  autoplay></dotlottie-player>
+              </figure>
+            </div>
+          </li>
+          <li class="card" id="card_3">
+            <div class="card__content"
+              style="background-color: #130f40;
+              background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
+              <div>
+                <h2 style="color: white;">Space News</h2>
+                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="btn-container">
+                  <button id="space-btn" name="space-button" type="submit">
+                    <span><a href="./news/news.html" style="color: white;">Let's Go to Space</a></span>
+                    <div
+                      style="position: absolute; left: 119.273px; top: 18.0747px; animation-delay: 3.37051s; transform: scale(0.196521);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 166.774px; top: 47.4519px; animation-delay: 3.03913s; transform: scale(0.33078);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 238.677px; top: 19.6434px; animation-delay: 3.85796s; transform: scale(1.29037);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 22.2022px; top: 4.69534px; animation-delay: 4.9415s; transform: scale(1.82231);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 206.74px; top: 40.7685px; animation-delay: 1.59195s; transform: scale(1.01375);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 241.531px; top: 14.2516px; animation-delay: 1.67616s; transform: scale(0.811597);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 14.754px; top: 25.2924px; animation-delay: 0.0348248s; transform: scale(0.102529);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.444px; top: 43.9803px; animation-delay: 1.5106s; transform: scale(0.16088);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 95.948px; top: 54.8942px; animation-delay: 3.18662s; transform: scale(1.7822);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.3484px; top: 36.5984px; animation-delay: 4.30868s; transform: scale(1.16326);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.622px; top: 20.0923px; animation-delay: 2.83829s; transform: scale(1.27781);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 142.1px; top: 22.3542px; animation-delay: 2.73988s; transform: scale(1.62715);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 145.079px; top: 6.97553px; animation-delay: 0.0408754s; transform: scale(0.468075);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 6.67886px; top: 38.4849px; animation-delay: 3.84019s; transform: scale(0.272217);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 201.17px; top: 39.9168px; animation-delay: 2.93587s; transform: scale(0.521258);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 224.215px; top: 42.9903px; animation-delay: 0.895495s; transform: scale(0.0458902);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 42.2308px; top: 9.78383px; animation-delay: 4.58407s; transform: scale(0.0422065);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 91.2734px; top: 14.0408px; animation-delay: 2.05927s; transform: scale(0.11997);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 35.6985px; top: 52.6403px; animation-delay: 3.07343s; transform: scale(0.672992);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 76.4191px; top: 48.453px; animation-delay: 2.35679s; transform: scale(1.46957);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 184.503px; top: 4.18267px; animation-delay: 1.43409s; transform: scale(0.606616);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 221.039px; top: 54.2493px; animation-delay: 2.92356s; transform: scale(0.638665);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 185.612px; top: 44.3px; animation-delay: 1.36401s; transform: scale(1.65012);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 154.027px; top: 45.9848px; animation-delay: 3.723s; transform: scale(1.4118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 220.591px; top: 4.95194px; animation-delay: 0.363098s; transform: scale(0.52369);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 236.028px; top: 11.1663px; animation-delay: 3.67493s; transform: scale(0.956478);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 110.241px; top: 20.2684px; animation-delay: 2.94906s; transform: scale(1.2193);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 12.602px; top: 19.8836px; animation-delay: 4.072s; transform: scale(1.49026);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 30.0911px; top: 37.9746px; animation-delay: 1.02002s; transform: scale(1.41008);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 62.3096px; top: 9.64604px; animation-delay: 3.9445s; transform: scale(0.231214);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 44.7189px; top: 32.4307px; animation-delay: 4.78921s; transform: scale(0.359408);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 191.866px; top: 27.151px; animation-delay: 1.34451s; transform: scale(1.13484);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 47.6744px; top: 3.00604px; animation-delay: 1.04567s; transform: scale(0.682023);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 98.6225px; top: 49.6115px; animation-delay: 2.41384s; transform: scale(1.96254);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 57.4785px; top: 29.6588px; animation-delay: 3.3569s; transform: scale(1.53118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 13.2213px; top: 24.538px; animation-delay: 1.69582s; transform: scale(1.6236);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 131.656px; top: 31.1837px; animation-delay: 1.29918s; transform: scale(1.84486);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 56.9067px; top: 51.9904px; animation-delay: 4.74375s; transform: scale(0.749788);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 82.8361px; top: 54.3876px; animation-delay: 1.28648s; transform: scale(0.566118);"
+                      class="star"></div>
+                    <div
+                      style="position: absolute; left: 193.213px; top: 43.9428px; animation-delay: 0.390178s; transform: scale(1.411);"
+                      class="star"></div>
+                    <div style="animation-delay: 1.2122s;" class="shooting-star shooting-star-1"></div>
+                    <div style="animation-delay: 0.777895s;" class="shooting-star shooting-star-2"></div>
+                    <div style="animation-delay: 4.90483s;" class="shooting-star shooting-star-3"></div>
+                    <div style="animation-delay: 3.66012s;" class="shooting-star shooting-star-4"></div>
+                  </button>
+                </div>
+
+              </div>
+              <figure style="height: 80vh;  padding-top: 30%;">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                  type="module"></script>
+
+                <dotlottie-player src="https://lottie.host/cfc186db-aa02-4f11-9e93-c42ef90488ed/ce2Ef2SQGB.json"
+                  background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                  autoplay></dotlottie-player>
+              </figure>
+            </div>
+          </li>
+
+        </ul>
+        <aside>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem repellat non ratione eum provident quaerat
+            obcaecati dicta autem voluptates sit cum quis distinctio, atque sint commodi reprehenderit perspiciatis iure
+            velit molestiae eos molestias ipsa nihil quia? Porro tempore in fugit, aspernatur et temporibus aliquam
+            magnam adipisci deleniti dicta repellat alias nostrum impedit quidem odit excepturi nam. Itaque numquam unde
+            quae dignissimos exercitationem placeat, ipsa amet tempora vitae ullam animi! Hic asperiores in esse atque
+            expedita dolorem officia illo commodi fugit earum ab, assumenda optio, sed repellat. Maiores laudantium
+            reprehenderit suscipit accusamus assumenda, debitis nemo ut sapiente numquam doloremque alias explicabo
+            minus autem harum illum dicta. Unde obcaecati inventore repellat id eligendi eaque, rerum aliquam maiores
+            aspernatur cumque tenetur quo qui mollitia atque quasi voluptate ipsum neque explicabo voluptatem quibusdam
+            beatae quae iste vero doloribus! Natus libero quibusdam molestias harum atque, assumenda doloribus quis,
+            quam corporis, voluptas suscipit magni! Enim sapiente totam consequatur repellat maxime placeat perferendis
+            iste maiores soluta, obcaecati incidunt expedita eius cumque ipsa quo sed. Minus distinctio culpa cumque
+            labore nulla laborum ex, explicabo magni mollitia eaque aliquam vero blanditiis quae, id necessitatibus
+            error voluptas harum tempora sint porro. Facilis beatae quasi soluta et ipsum suscipit repellendus
+            inventore.</p>
+
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ipsam molestias. Fuga similique, dolor
+            tempora rerum perferendis ipsam ullam doloribus beatae esse facilis quae sit excepturi expedita non, sunt
+            accusantium magnam? Animi nesciunt nostrum eligendi iusto voluptatum hic qui. Quod distinctio qui nobis et
+            doloremque. Fuga, itaque? Laborum dignissimos nobis quaerat optio voluptatum similique unde, neque
+            cupiditate, vel, fugiat dolore? Accusantium neque deserunt ducimus enim, illum laborum magni ipsam eos optio
+            aspernatur nam necessitatibus quod natus, dolor laboriosam illo velit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem repellat non ratione eum provident quaerat
+            obcaecati dicta autem voluptates sit cum quis distinctio, atque sint commodi reprehenderit perspiciatis iure
+            velit molestiae eos molestias ipsa nihil quia? Porro tempore in fugit, aspernatur et temporibus aliquam
+            magnam adipisci deleniti dicta repellat alias nostrum impedit quidem odit excepturi nam. Itaque numquam unde
+            quae dignissimos exercitationem placeat, ipsa amet tempora vitae ullam animi! Hic asperiores in esse atque
+            expedita dolorem officia illo commodi fugit earum ab, assumenda optio, sed repellat. Maiores laudantium
+            reprehenderit suscipit accusamus assumenda, debitis nemo ut sapiente numquam doloremque alias explicabo
+            minus autem harum illum dicta. Unde obcaecati inventore repellat id eligendi eaque, rerum aliquam maiores
+            aspernatur cumque tenetur quo qui mollitia atque quasi voluptate ipsum neque explicabo voluptatem quibusdam
+            beatae quae iste vero doloribus! Natus libero quibusdam molestias harum atque, assumenda doloribus quis,
+            quam corporis, voluptas suscipit magni! Enim sapiente totam consequatur repellat maxime placeat perferendis
+            iste maiores soluta, obcaecati incidunt expedita eius cumque ipsa quo sed. Minus distinctio culpa cumque
+            labore nulla laborum ex, explicabo magni mollitia eaque aliquam vero blanditiis quae, id necessitatibus
+            error voluptas harum tempora sint porro. Facilis beatae quasi soluta et ipsum suscipit repellendus
+            inventore.</p>
+
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ipsam molestias. Fuga similique, dolor
+            tempora rerum perferendis ipsam ullam doloribus beatae esse facilis quae sit excepturi expedita non, sunt
+            accusantium magnam? Animi nesciunt nostrum eligendi iusto voluptatum hic qui. Quod distinctio qui nobis et
+            doloremque. Fuga, itaque? Laborum dignissimos nobis quaerat optio voluptatum similique unde, neque
+            cupiditate, vel, fugiat dolore? Accusantium neque deserunt ducimus enim, illum laborum magni ipsam eos optio
+            aspernatur nam necessitatibus quod natus, dolor laboriosam illo velit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem repellat non ratione eum provident quaerat
+            obcaecati dicta autem voluptates sit cum quis distinctio, atque sint commodi reprehenderit perspiciatis iure
+            velit molestiae eos molestias ipsa nihil quia? Porro tempore in fugit, aspernatur et temporibus aliquam
+            magnam adipisci deleniti dicta repellat alias nostrum impedit quidem odit excepturi nam. Itaque numquam unde
+            quae dignissimos exercitationem placeat, ipsa amet tempora vitae ullam animi! Hic asperiores in esse atque
+            expedita dolorem officia illo commodi fugit earum ab, assumenda optio, sed repellat. Maiores laudantium
+            reprehenderit suscipit accusamus assumenda, debitis nemo ut sapiente numquam doloremque alias explicabo
+            minus autem harum illum dicta. Unde obcaecati inventore repellat id eligendi eaque, rerum aliquam maiores
+            aspernatur cumque tenetur quo qui mollitia atque quasi voluptate ipsum neque explicabo voluptatem quibusdam
+            beatae quae iste vero doloribus! Natus libero quibusdam molestias harum atque, assumenda doloribus quis,
+            quam corporis, voluptas suscipit magni! Enim sapiente totam consequatur repellat maxime placeat perferendis
+            iste maiores soluta, obcaecati incidunt expedita eius cumque ipsa quo sed. Minus distinctio culpa cumque
+            labore nulla laborum ex, explicabo magni mollitia eaque aliquam vero blanditiis quae, id necessitatibus
+            error voluptas harum tempora sint porro. Facilis beatae quasi soluta et ipsum suscipit repellendus
+            inventore.</p>
+
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ipsam molestias. Fuga similique, dolor
+            tempora rerum perferendis ipsam ullam doloribus beatae esse facilis quae sit excepturi expedita non, sunt
+            accusantium magnam? Animi nesciunt nostrum eligendi iusto voluptatum hic qui. Quod distinctio qui nobis et
+            doloremque. Fuga, itaque? Laborum dignissimos nobis quaerat optio voluptatum similique unde, neque
+            cupiditate, vel, fugiat dolore? Accusantium neque deserunt ducimus enim, illum laborum magni ipsam eos optio
+            aspernatur nam necessitatibus quod natus, dolor laboriosam illo velit.</p>
+        </aside>
+    </div>
+
+
+
+    <!-- Feature box ends -->
+
+    <!-- Slider Starts here -->
+    <section id="sectiontwo" class="screen">
+      <div id="slider">
+          <input type="radio" name="slider" id="slide1" checked>
+          <input type="radio" name="slider" id="slide2">
+          <input type="radio" name="slider" id="slide3">
+          <input type="radio" name="slider" id="slide4">
+          <div id="slides">
+              <div id="overflow">
+                  <div class="inner">
+                      <a href='/satellite-kit'>
+                          <div class="slide slide_1">
+                              <div class="slide-content">
+                                  <h2 class="slide-text">Special Deals</h2>
+                                  <p>Upto 50% Off on Satellite Kits this Diwali!</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/hoodie'>
+                          <div class="slide slide_2">
+                              <div class="slide-content">
+                                  <h2 class="slide-text">Explore Our Apparel Range</h2>
+                                  <p>Space-theme apparels for Men, Women and Kids</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/books'>
+                          <div class="slide slide_3">
+                              <div class="slide-content">
+                                  <h2 class="slide-text">Books</h2>
+                                  <p>Explore a Wide Range of Astronomy and Space Books</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/telescope'>
+                          <div class="slide slide_4">
+                              <div class="slide-content">
+                                  <h2 class="slide-text">Telescopes</h2>
+                                  <p>Explore the New Arrivals!</p>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div id="controls">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+          </div>
+          <div id="bullets">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+          </div>
+      </div>
+
+      <!-- ############## Rock Parallax ############### -->
+      <div>
+          <div class="rockbg1">
+              <img src="images/landingPageAssets/rock.png" alt="">
+          </div>
+          <div class="planet-links"></div>
+      </div>
+      <!-- ############## Rock Parallax - End ############### -->
+
+  </section>
+  <!-- ############## Image Slider - End ############### -->
+
+  <!-- ############## Products Carousel Heading ############### -->
+  <header class="ScriptHeader">
+      <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="rt-heading">
+                  <h1>Featured Products</h1>
+                  <h2>Upto 50% Off in Festive Season</h2>
+              </div>
+          </div>
+      </div>
+  </header>
+    <!-- Slider ends here -->
+
+    <!-- <Parallax new start -->
+    <div class="new-parallax">
+      <h1 style="color: white; font-size: x-large; padding-left: 30px;">Podcasts</h1>
+      <div class="external">
+
+        <div class="horizontal-scroll-wrapper">
+
+          <div class="img-wrapper slower">
+            <a href="https://www.nasa.gov/podcasts/curious-universe/" target="_blank" rel="noopener">
+              <img src="./images/pod1.png" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper faster">
+            <a href="https://www.nasa.gov/podcasts/on-a-mission/" target="_blank" rel="noopener">
+              <img src="https://www.nasa.gov/wp-content/uploads/2023/07/onamissionblue2021-1400x1400-1.jpg" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower vertical">
+            <a href="https://www.nasa.gov/podcasts/houston-we-have-a-podcast/" target="_blank" rel="noopener">
+              <img src="https://www.nasa.gov/wp-content/uploads/2024/07/hwhap-logo-2024-4k.png" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower slower-down">
+            <a href="https://pod.link/1113853090" target="_blank" rel="noopener">
+              <img src="https://podlink.imgix.net/7cb08ccc733a95f1584f4365ca37360e/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+            
+          </div>
+
+          <div class="img-wrapper">
+            <a href="https://www.nasa.gov/podcasts/universo-curioso-de-la-nasa/" target="_blank" rel="noopener">
+              <img src="https://www.nasa.gov/wp-content/uploads/2024/07/universocurioso-s01-cover-2024-v021.png" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower">
+            <a href="https://www.nasa.gov/podcasts/small-steps-giant-leaps/" target="_blank" rel="noopener">
+              <img src="https://www.nasa.gov/wp-content/uploads/2017/08/1400x1400px_podcastalbumcover.png" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper faster1">
+            <a href="https://pod.link/1529417868" target="_blank" rel="noopener">
+              <img src="https://podlink.imgix.net/5740c3db3c0d4066da5226104af06a17/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower slower2">
+            <a href="https://pod.link/609365180" target="_blank"
+              rel="noopener">
+              <img src="https://podlink.imgix.net/af9d8fd61ade492aff4c165193e3637f/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper">
+            <a href="https://pod.link/1557185803" target="_blank"
+              rel="noopener">
+              <img src="https://podlink.imgix.net/0cf077f67cf94c2572fcc3694c17a3a8/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower">
+            <a href="https://pod.link/1329608216" target="_blank"
+              rel="noopener">
+              <img src="https://podlink.imgix.net/17f2850208e752b24f5eccb22d0ca3ed/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+          </div>
+
+          <div class="img-wrapper slower last">
+            <a href="https://pod.link/1634360886" target="_blank"
+              rel="noopener">
+              <img src="https://podlink.imgix.net/95bf1485166d7b1e3a97b7ea5dda9831/poster.jpeg?width=448&auto=format" alt="">
+            </a>
+          </div>
+        </div>
+        <p class="scroll-info"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+              <path
+                d="M50,67.1c-0.6,0-1.2-0.2-1.8-0.7c-3.8-3.8-7.7-7.7-11.5-11.5c-2.3-2.3,1.2-5.8,3.5-3.5c2.5,2.5,4.9,4.9,7.4,7.4      c0-13.7,0-27.4,0-41.2c0-0.6,0.2-1.2,0.5-1.5c0,0,0,0,0,0c0.4-0.6,1.1-1,2-0.9c13.7,0.3,26.4,7.2,33.5,19.1      C96.5,55.9,84.7,85,60.2,91.6C35.5,98.2,11.6,79.1,11.1,54c-0.1-3.2,4.9-3.2,5,0c0.3,13.8,8.4,26.4,21.3,31.5      c12.5,5,27.1,1.9,36.6-7.5c9.5-9.5,12.5-24.1,7.5-36.6c-4.8-12.1-16.3-20.1-29-21.2c0,12.8,0,25.5,0,38.3      c2.5-2.5,4.9-4.9,7.4-7.4c2.3-2.3,5.8,1.3,3.5,3.5c-3.9,3.9-7.8,7.8-11.8,11.8C51.2,66.9,50.6,67.1,50,67.1z" />
+            </svg></span> Try scrolling down</p>
+        <header>
+          <p>Postcards from Paris.</p>
+          <h1>Css-only parallax horizontal gallery</h1>
+          <p>Grab (these and more) photos from - <a href="https://altphotos.com/free/paris/" target="_blank"
+              rel="noopener">altphotos.</a></p>
         </header>
-        <!-- ############## Products Carousel Heading - End ############### -->
-
-        <!-- ############## Products Carousel ############### -->
-        <section id="sectionthree">
-            <div class="rt-container">
-                <div class="col-rt-12">
-                    <div class='carousel-container'>
-                        <div class='carousel'>
-                            <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1'
-                                name='carousel' type='radio'>
-                            <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel'
-                                type='radio'>
-                            <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel'
-                                type='radio'>
-                            <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--forward'
-                                    for='carousel-slide-activator-2'>
-                                    <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png"
-                                        alt="">
-                                </label>
-                            </div>
-                            <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--backward'
-                                    for='carousel-slide-activator-1'>
-                                    <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png"
-                                        alt="">
-                                </label>
-                                <label class='carousel__control carousel__control--forward'
-                                    for='carousel-slide-activator-3'>
-                                    <img class="carousel_control_image" src="./images/landingPageAssets/right-arrow.png"
-                                        alt="">
-                                </label>
-                            </div>
-                            <div class='carousel__controls'>
-                                <label class='carousel__control carousel__control--backward'
-                                    for='carousel-slide-activator-2'>
-                                    <img class="carousel_control_image" src="./images/landingPageAssets/left-arrow.png"
-                                        alt="">
-                                </label>
-                            </div>
-                            <div class='carousel__screen'>
-                                <div class='carousel__track'>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/satellite-kit'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/telescope'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/books'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/hoodie'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/phone'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-                                    <div
-                                        class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-                                        <div class='carousel-content'>
-                                            <!-- ############## Pushable Button ############### -->
-                                            <a href='/food'>
-                                                <button class="button-pushable" role="button">
-                                                    <span class="button-shadow"></span>
-                                                    <span class="button-edge"></span>
-                                                    <span class="button-front text">
-                                                        Buy Now!
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <!-- ############## Pushable Button - End ############### -->
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ############## Products Carousel - End ############### -->
-
-
-        <!-- ############## Page Footer ############### -->
-        <div id="footer">
-            <p>Copyright &nbsp; &copy; &nbsp; allaboutspace</p>
-        </div>
-        <!-- ############## Page Footer - End ############### -->
-
+      </div>
     </div>
+    <!-- <Parallax new end -->
+
+    <!-- ############## Image Slider ############### -->
+
+    <!-- ############## Products Carousel Heading - End ############### -->
+
+    <!-- ############## Products Carousel ############### -->
+
+    <!-- ############## Products Carousel - End ############### -->
 
 
-    <!-- ############## Scripts ############### -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const featureDiv = document.querySelector('.feature');
-            if (!featureDiv) return;
+    <!-- ############## Page Footer ############### -->
+    <div id="footer">
+      <p>Copyright &nbsp; &copy; &nbsp; allaboutspace</p>
+    </div>
+    <!-- ############## Page Footer - End ############### -->
 
-            const ball = featureDiv.querySelector('.ball');
-            const path = featureDiv.querySelector('.path');
-            const totalLength = path.getTotalLength();
-            const textElements = featureDiv.querySelectorAll('.text01, .text02, .text03');
-            const createdBalls = new Set();
-            let ballCounter = 1;
-
-            path.style.strokeDasharray = totalLength;
-            path.style.strokeDashoffset = totalLength;
-
-            function updateBallAndCreateDuplicates() {
-                const scrollY = window.scrollY;
-                const viewportHeight = window.innerHeight;
-                const scrollHeight = document.body.scrollHeight - viewportHeight;
-                const scrollFraction = scrollY / scrollHeight;
-                const pathLength = totalLength * scrollFraction;
-                path.style.strokeDashoffset = totalLength - pathLength;
-                const point = path.getPointAtLength(pathLength);
-                ball.setAttribute('cx', point.x);
-                ball.setAttribute('cy', point.y);
-
-                textElements.forEach((textElement) => {
-                    const textY = parseFloat(textElement.getAttribute('y'));
-                    const id = textElement.className.baseVal;
-
-                    if (Math.abs(point.y - textY) < 10 && !createdBalls.has(id)) {
-                        createBallDuplicate(point.x, point.y, getLabelForId(id));
-                        ballCounter++;
-                        createdBalls.add(id);
-                    }
-                });
-            }
-
-            function getLabelForId(id) {
-                switch (id) {
-                    case 'text01':
-                        return 'Learning Mode';
-                    case 'text02':
-                        return 'Simulation';
-                    case 'text03':
-                        return 'News';
-                    default:
-                        return `ball${ballCounter}`;
-                }
-            }
-
-            function createBallDuplicate(x, y, label) {
-                const svg = featureDiv.querySelector('svg');
-                const duplicateBall = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                duplicateBall.setAttribute('r', '40');
-                duplicateBall.setAttribute('cx', x);
-                duplicateBall.setAttribute('cy', y);
-                duplicateBall.classList.add('ball-duplicate');
-                duplicateBall.style.visibility = 'hidden';
-                svg.appendChild(duplicateBall);
-
-                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                text.setAttribute('x', x);
-                text.setAttribute('y', y);
-                text.classList.add('ball-label');
-                text.textContent = label;
-                text.style.visibility = 'hidden';
-                svg.appendChild(text);
-
-                // Debugging statement
-                console.log(`Creating ball with label: ${label} at (${x}, ${y})`);
-
-                duplicateBall.addEventListener('click', function () {
-                    console.log(`Clicked on ball with label: ${label}`); // Debugging line
-                    switch (label) {
-                        case 'Learning Mode':
-                            console.log('Redirecting to Learning Mode');
-                            window.location.href = './learning-mode.html';
-                            break;
-                        case 'Simulation':
-                            console.log('Redirecting to Simulation');
-                            window.location.href = './simulation.html';
-                            break;
-                        case 'News':
-                            console.log('Redirecting to News');
-                            window.location.href = './news/news.html';
-                            break;
-                        default:
-                            console.log(`Redirecting to ${label}`);
-                            window.location.href = `./${label}.html`;
-                            break;
-                    }
-                });
-
-                requestAnimationFrame(() => {
-                    duplicateBall.style.visibility = 'visible';
-                    text.style.visibility = 'visible';
-                });
-            }
-
-            function onScroll() {
-                requestAnimationFrame(updateBallAndCreateDuplicates);
-            }
-
-            window.addEventListener('scroll', onScroll);
-            updateBallAndCreateDuplicates();
-        });
-    </script>
-    <script>
-        window.embeddedChatbotConfig = {
-            chatbotId: "Pellh0iWBP85cdUU92SB0",
-            domain: "www.chatbase.co"
-        }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="Pellh0iWBP85cdUU92SB0" domain="www.chatbase.co" defer>
-    </script>
+  </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="./JavaScript/index.js" type="text/javascript"></script>
-    <script src="./JavaScript/loader.js" type="text/javascript"></script>
-    <script src="./JavaScript/userBox.js" type="text/javascript"></script>
+  <!-- ############## Scripts ############### -->
 
-    <!-- ############## Scripts - End ############### -->
+  <script>
+    window.embeddedChatbotConfig = {
+      chatbotId: "Pellh0iWBP85cdUU92SB0",
+      domain: "www.chatbase.co"
+    }
+  </script>
+  <script src="https://www.chatbase.co/embed.min.js" chatbotId="Pellh0iWBP85cdUU92SB0" domain="www.chatbase.co" defer>
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="./JavaScript/index.js" type="text/javascript"></script>
+  <script src="./JavaScript/loader.js" type="text/javascript"></script>
+  <script src="./JavaScript/userBox.js" type="text/javascript"></script>
+
+  <!-- ############## Scripts - End ############### -->
 
 </body>
 

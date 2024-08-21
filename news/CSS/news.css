@@ -9,6 +9,16 @@
     color: #fff;
 }
 
+main h1{
+    
+    color: #fff;;
+}
+
+main div{
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .header-link {
     color: #fff;
     text-decoration: none;

@@ -1,5 +1,6 @@
-const API_KEY = '4cc8e381c63d47e9a64c5200ca2581e5';
-const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=${API_KEY}`;
+
+const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=4cc8e381c63d47e9a64c5200ca2581e5
+`;
 const DEFAULT_IMAGE_URL = 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg';
 
 const newsContainer = document.getElementById('news-container');

@@ -9,7 +9,7 @@ stepThree = stepTwo[0] + stepTwo[1];
 const key = stepThree + secret;
 
 
-const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=${key}`;
+const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=${stepThree + secret}`;
 console.log(NEWS_API_URL);
 const DEFAULT_IMAGE_URL = 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg';
 

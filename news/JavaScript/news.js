@@ -1,6 +1,16 @@
+let MixString = ["852","ac00251","9c46a9e","74d36","c183e8cc4"];
+let secretOne = "91";
+let secretTwo = "5e1";
+let secret = secretTwo.split("").reverse().join("");
 
-const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=4cc8e381c63d47e9a64c5200ca2581e5
-`;
+stepOne = MixString.join("").split("").reverse().join("");
+stepTwo = stepOne.split(secretOne);
+stepThree = stepTwo[0] + stepTwo[1];
+const key = stepThree + secret;
+
+
+const NEWS_API_URL = `https://newsapi.org/v2/everything?q=space&apiKey=${key}`;
+console.log(NEWS_API_URL);
 const DEFAULT_IMAGE_URL = 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg';
 
 const newsContainer = document.getElementById('news-container');

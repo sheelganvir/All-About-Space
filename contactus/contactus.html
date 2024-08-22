@@ -14,7 +14,19 @@
     <link rel="stylesheet" href="./CSS/common/bg-animation.css" />
     <link rel="stylesheet" href="./CSS/common/earthMoonAnimation.css" />
     <!-- <link rel="stylesheet" href="./CSS/common/loader.css" /> -->
+    <style>
+        .text-container {
+            margin-top: 50px;
+        padding-left: 30px;    
+    display: flex;
+    gap: 20px; /* Adjust the gap as needed */
+}
 
+.vision-desc {
+    margin: 0;
+}
+
+    </style>
 </head>
 
 <body onload="myFunction()">
@@ -32,7 +44,7 @@
             <div class="logo"><a href='/'>All About Space</a></div>
             <ul id="navbar-links">
                 <li><a class='navbar-a1' href='/'>Home</a></li>
-                <li><a class='navbar-a1' href='../aboutus/aboutus.html'>About Us</a></li>
+                <li><a class='navbar-a1' href='../aboutus/aboutus.html'>About</a></li>
                 <li><a class="navbar-a1" href="https://blogs.nasa.gov/" target="_blank">Blog</a></li>
                 <li><a class="navbar-a1" href="#">Contact Us</a></li>
 
@@ -113,12 +125,16 @@
                 <div class="more-info">
                     <div class="vision">
                         <h1>How to find us?</h1>
-                        <p class="vision-desc justify">Please visit our Pune Space Connect Store for retail, experiences. For all business and supplier related queries please contact Space Connect HQ at Mumbai.</p>
-                        <p class="vision-desc">Contact : +91-98XXXXXXXX</p>
+                        <div class="text-container">
+                            <p class="vision-desc">Developer - Sheel Ganvir</p>
+                            <p class="vision-desc">Developer - Edmand Debbarma </p>
+                            <p class="vision-desc">Researcher - Soumyaditya Chakraborty</p>
+
+                        </div>
+                        
                     </div>
-
-
                 </div>
+                
                 <img src="./images/aboutUsAssets/earth.png">
             </div>
             <div class="moon-container">

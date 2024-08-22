@@ -2,7 +2,7 @@
 
 Welcome to **All-About-Space**! 🚀 This project is dedicated to bridging the gap between the rapidly advancing field of space exploration and the knowledge available to the general public. Our mission is to create a minimalistic, beginner-friendly web app that makes learning about space accessible, engaging, and accurate.
 
-![All-About-Space img](https://github.com/user-attachments/assets/a7a7e717-1a43-4796-9462-429bd59b1f30)
+![Screenshot_20240822_222203](https://github.com/user-attachments/assets/1d094ac8-2086-4cfb-bb38-ca61ab4ef502)
 
 
 ## 🤔 Why All-About-Space?

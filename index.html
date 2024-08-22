@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="./CSS/landingPage/feature.css" />
   <link rel="stylesheet" href="./CSS/landingPage/newparallax.css" />
   <link rel="stylesheet" href="./CSS/landingPage/solarsystem.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/faq.css" />
+  <link rel="stylesheet" href="./CSS/landingPage/quiz.css" />
 
   <style>
     .ball-duplicate {
@@ -68,7 +70,9 @@
 
   <!-- ############## Page Loading Animation ############### -->
   <div id="loader-wrapper" class="load-wrapper" style="display:flex;">
-    <div class="loader"></div>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <dotlottie-player src="https://lottie.host/30dcdd77-49f3-43bf-b0d0-3ada984c9adb/108rwXUf20.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
   </div>
   <!-- ############## Page Loading Animation - End ############### -->
   <audio loop autoplay src="/audio/space_music.mp3"></audio>
@@ -200,7 +204,7 @@
               background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
               <div>
                 <h2 style="color: white;">Learning Mode</h2>
-                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p style="color: white;">Unlock Space Learning Mode for cosmic mastery.</p>
                 <div class="btn-container">
                   <button id="space-btn" name="space-button" type="submit">
 
@@ -349,7 +353,7 @@
               background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
               <div>
                 <h2 style="color: white;">Simulations</h2>
-                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p style="color: white;">Immerse in Space Simulation for a stellar experience.</p>
                 <div class="btn-container">
                   <button id="space-btn" name="space-button" type="submit">
                     <span><a href="#" style="color: white;">Let's Go to Space</a></span>
@@ -481,13 +485,11 @@
                 </div>
 
               </div>
-              <figure style="height: 80vh;  padding-top: 30%;">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                  type="module"></script>
+              <figure style="height: 80vh;  padding-top: 30%; ">
+                <div style="max-width: 100px;">
+                  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-                <dotlottie-player src="https://lottie.host/677a28a8-cc48-4168-97a9-1e5888412d06/FEe2RhUtyO.json"
-                  background="transparent" speed="1" style="width: 300px; height: 300px;" loop
-                  autoplay></dotlottie-player>
+    <dotlottie-player src="https://lottie.host/7490dbba-26ee-4c7a-8648-d04e5c703620/ykptODrnkj.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>                </div>
               </figure>
             </div>
           </li>
@@ -497,7 +499,7 @@
               background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);">
               <div>
                 <h2 style="color: white;">Space News</h2>
-                <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p style="color: white;">Stay updated with the latest in space news.</p>
                 <div class="btn-container">
                   <button id="space-btn" name="space-button" type="submit">
                     <span><a href="./news/news.html" style="color: white;">Let's Go to Space</a></span>
@@ -647,98 +649,21 @@
       <div class="solar-system">
         <div class="sun"></div>
         <dotlottie-player src="https://lottie.host/9ddc8b11-8a0e-4e19-9933-486658b01ba3/cXLpD5XPpN.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+        
     </div>
     </aside>
     
     <!-- Feature box ends -->
+    <div class="glowbuttoncontainer">
+      <h1 style="color: white;">>>&emsp; <a href="./quiz/quiz.html"><button class="glowbutton">Play Quiz</button></a> &emsp;<<</h1>
+      
+    </div>
     
-    <!-- Slider Starts here -->
-    <section id="sectiontwo" class="screen">
-      <div id="slider">
-          <input type="radio" name="slider" id="slide1" checked>
-          <input type="radio" name="slider" id="slide2">
-          <input type="radio" name="slider" id="slide3">
-          <input type="radio" name="slider" id="slide4">
-          <div id="slides">
-              <div id="overflow">
-                  <div class="inner">
-                      <a href='/satellite-kit'>
-                          <div class="slide slide_1">
-                              <div class="slide-content">
-                                  <h2 class="slide-text">Special Deals</h2>
-                                  <p>Upto 50% Off on Satellite Kits this Diwali!</p>
-                              </div>
-                          </div>
-                      </a>
-                      <a href='/hoodie'>
-                          <div class="slide slide_2">
-                              <div class="slide-content">
-                                  <h2 class="slide-text">Explore Our Apparel Range</h2>
-                                  <p>Space-theme apparels for Men, Women and Kids</p>
-                              </div>
-                          </div>
-                      </a>
-                      <a href='/books'>
-                          <div class="slide slide_3">
-                              <div class="slide-content">
-                                  <h2 class="slide-text">Books</h2>
-                                  <p>Explore a Wide Range of Astronomy and Space Books</p>
-                              </div>
-                          </div>
-                      </a>
-                      <a href='/telescope'>
-                          <div class="slide slide_4">
-                              <div class="slide-content">
-                                  <h2 class="slide-text">Telescopes</h2>
-                                  <p>Explore the New Arrivals!</p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div id="controls">
-              <label for="slide1"></label>
-              <label for="slide2"></label>
-              <label for="slide3"></label>
-              <label for="slide4"></label>
-          </div>
-          <div id="bullets">
-              <label for="slide1"></label>
-              <label for="slide2"></label>
-              <label for="slide3"></label>
-              <label for="slide4"></label>
-          </div>
-      </div>
-
-      <!-- ############## Rock Parallax ############### -->
-      <div>
-          <div class="rockbg1">
-              <img src="images/landingPageAssets/rock.png" alt="">
-          </div>
-          <div class="planet-links"></div>
-      </div>
-      <!-- ############## Rock Parallax - End ############### -->
-
-  </section>
-  <!-- ############## Image Slider - End ############### -->
-
-  <!-- ############## Products Carousel Heading ############### -->
-  <header class="ScriptHeader">
-      <div class="rt-container">
-          <div class="col-rt-12">
-              <div class="rt-heading">
-                  <h1>Featured Products</h1>
-                  <h2>Upto 50% Off in Festive Season</h2>
-              </div>
-          </div>
-      </div>
-  </header>
     <!-- Slider ends here -->
 
     <!-- <Parallax new start -->
     <div class="new-parallax">
-      <h1 style="color: white; font-size: x-large; padding-left: 30px;">>>></h1>
+      <h1 style="color: white; font-size: x-large; padding-left: 30px;"></h1>
       <div class="external">
         <button class="nav-button left">❮</button>
         <div class="horizontal-scroll-wrapper">
@@ -817,25 +742,141 @@
         </div>
         <button class="nav-button right">❯</button>
        
-          <p class="scroll-info" style="color: white; text-align: center; font-size: xx-large; margin-left: 45%;">Podcasts</p>
+          <p class="scroll-info" style="color: white;
+          text-align: center;
+          font-size: xx-large;
+          margin: 0; /* Remove any default margin */
+          position: absolute; /* Position it absolutely to control centering */
+          left: 50%;
+          transform: translateX(-50%);">Podcasts</p>
 
         
       </div>
     </div>
     <!-- <Parallax new end -->
+      
+    <!-- Slider Starts here -->
+    <section id="sectiontwo" class="screen">
+      <div id="slider">
+          <input type="radio" name="slider" id="slide1" checked>
+          <input type="radio" name="slider" id="slide2">
+          <input type="radio" name="slider" id="slide3">
+          <input type="radio" name="slider" id="slide4">
+          <div id="slides">
+              <div id="overflow">
+                  <div class="inner">
+                      <a href='/satellite-kit'>
+                          <div class="slide slide_1">
+                              <div class="slide-content">
+                                  <h2 class="slide-text"></h2>
+                                  <p></p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/hoodie'>
+                          <div class="slide slide_2">
+                              <div class="slide-content">
+                                  <h2 class="slide-text"></h2>
+                                  <p></p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/books'>
+                          <div class="slide slide_3">
+                              <div class="slide-content">
+                                  <h2 class="slide-text"></h2>
+                                  <p></p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href='/telescope'>
+                          <div class="slide slide_4">
+                              <div class="slide-content">
+                                  <h2 class="slide-text"></h2>
+                                  <p></p>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div id="controls">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+          </div>
+          <div id="bullets">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+          </div>
+      </div>
 
-    <!-- ############## Image Slider ############### -->
+      <!-- ############## Rock Parallax ############### -->
+      <div>
+          <div class="rockbg1">
+              <img src="images/landingPageAssets/rock.png" alt="">
+          </div>
+          <div class="planet-links"></div>
+      </div>
+      <!-- ############## Rock Parallax - End ############### -->
 
-    <!-- ############## Products Carousel Heading - End ############### -->
+  </section>
+  <!-- ############## Image Slider - End ############### -->
 
-    <!-- ############## Products Carousel ############### -->
+  <!-- ############## Products Carousel Heading ############### -->
+  <header class="ScriptHeader">
+      <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="rt-heading">
+                  <h1>Testimonials</h1>
+                  <h2>Views of Experts and Scientists</h2>
+              </div>
+          </div>
+      </div>
+  </header>
+    <!-- FAQ section start-->
+    <div class="faq-container">
+      <div class="faq">
+        <h2 class="faq__title">Frequently asked questions</h2>
+        <p class="faq__subtitle">
+          Something is not clear? You need help? Check our FAQ section!
+        </p>
+        <button class="faq__question">Is it FREE for use?</button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+           Yes! AllABoutSpace will always be an open-source free project for all its user forever!
+          </p>
+        </div>
+        <button class="faq__question">
+          How can you help us?
+        </button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            By spreading the word among your friends and anyone you think who needs space exploration education without spending a penny
+          </p>
+        </div>
+        <button class="faq__question">Can I expect more features in future?</button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            Yes we are looking forward to add features to our ever-growing project
+          </p>
+        </div>
+        <button class="faq__question">Where can you find us?</button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            In the about section
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <!-- ############## Products Carousel - End ############### -->
-
-
+      <!-- FAQ section end -->
     <!-- ############## Page Footer ############### -->
     <div id="footer">
-      <p>Copyright &nbsp; &copy; &nbsp; allaboutspace</p>
+      <p>Copyright &nbsp; &copy; &nbsp; all-about-space</p>
     </div>
     <!-- ############## Page Footer - End ############### -->
 
@@ -866,7 +907,51 @@ rightButton.addEventListener('click', () => {
 });
 
   </script>
+  <script>
+    let questions = document.querySelectorAll(".faq__question");
+questions.forEach((question) => {
+  question.addEventListener("click", function () {
+    question.classList.toggle("faq__question_active");
+    const nextElement = question.nextElementSibling;
+    nextElement.classList.toggle("faq__panel_active");
+  });
+});
+  </script>
+  <script>
+    // JavaScript for automatic sliding
+let currentSlide = 1;
+const totalSlides = 4; // Total number of slides
+const slideInterval = 5000; // Time in milliseconds (5 seconds)
 
+// Function to advance to the next slide
+function nextSlide() {
+    currentSlide++;
+    if (currentSlide > totalSlides) {
+        currentSlide = 1;
+    }
+    document.getElementById('slide' + currentSlide).checked = true;
+}
+
+// Set interval to automatically move to the next slide
+let slideTimer = setInterval(nextSlide, slideInterval);
+
+// Pause the automatic sliding when a control button is clicked
+document.querySelectorAll('#controls label').forEach(label => {
+    label.addEventListener('click', () => {
+        clearInterval(slideTimer);
+        slideTimer = setInterval(nextSlide, slideInterval);
+    });
+});
+
+// Pause the automatic sliding when a bullet is clicked
+document.querySelectorAll('#bullets label').forEach(label => {
+    label.addEventListener('click', () => {
+        clearInterval(slideTimer);
+        slideTimer = setInterval(nextSlide, slideInterval);
+    });
+});
+
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="./JavaScript/index.js" type="text/javascript"></script>
   <script src="./JavaScript/loader.js" type="text/javascript"></script>

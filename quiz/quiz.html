@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIC SPACE Quiz curated by AI</title>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        .bg {
+          position: fixed; /* Make it full-screen */
+          top: 0;
+          left: 0;
+          width: full;
+          height: 100%;
+          border: none; /* Remove iframe border */
+          z-index: -1; /* Make it behind other elements */
+          background-size: 100%;
+        }
+        .quiz-container {
+          position: relative; /* Make it a positioned element */
+          z-index: 1; /* Make it appear on top of the iframe */
+        }
+      </style>
+</head>
+<body>
+    <iframe src="https://lottie.host/embed/ea0ffce2-507e-42de-8f56-03417e558448/DusOGxcUf1.json" class="bg"></iframe>
+    <div class="quiz-container">
+        <h1>SPACE Quiz by AI</h1>
+        <p id="question"></p>
+        <ul id="options"></ul>
+        <button id="next">Next</button>
+        <p id="result"></p>
+        <p id="score"></p>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

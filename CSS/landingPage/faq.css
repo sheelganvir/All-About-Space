@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.faq-container {
+  min-height: 80vh;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+  background-size: cover;
+  opacity: 150%;
+  background-blend-mode: darken;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Orbitron', sans-serif;
+  color: #d0d0d0;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.faq {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.faq__title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #8b8dff;
+  letter-spacing: 3px;
+}
+
+.faq__subtitle {
+  font-size: 24px;
+  color: #c0c0c0;
+}
+
+.faq__question {
+  margin: 10px;
+  background-color: #2d2d4a;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 15px 20px 15px 50px;
+  width: 80%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  color: #c0c0c0;
+}
+
+.faq__question:after {
+  content: "\02795";
+  position: absolute;
+  left: 20px;
+  font-size: 16px;
+  color: #8b8dff;
+}
+
+.faq__question_active:after {
+  content: "\2796";
+  color: #f0f0f0;
+  position: absolute;
+  left: 20px;
+  font-size: 16px;
+}
+
+.faq__subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.55;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.faq__panel {
+  display: none;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 15%;
+  max-width: 80%;
+  overflow: hidden;
+  color: #c0c0c0;
+}
+
+.faq__question:hover {
+  background-color: #404064;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.faq__question:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 40px;
+  /* background-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/096/431/small/ufo-3d-icon-png.png'); */
+  background-position-x: right;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: flyby 2s infinite;
+}
+
+@keyframes flyby {
+  0% {
+    transform: translateY(-50%) translateX(-100%);
+  }
+  50% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(100%);
+  }
+}
+
+.faq__panel_active {
+  display: block;
+}

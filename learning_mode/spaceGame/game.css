@@ -1,0 +1,178 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.space-background {
+    background: url('https://wallpapers.com/images/hd/dark-space-wallpaper-0mh5r43wp68yf29o.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    background-blend-mode: lighten;
+}
+
+.planet {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Planet 1 */
+#planet1 {
+    background-image: url('1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat:initial;
+    top: 80%;
+    left: 5%;
+}
+
+/* Planet 2 */
+#planet2 {
+    background-image: url('5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: initial;
+    top: 60%;
+    left: 20%;
+    height: 150px;
+    width: 150px;
+}
+
+/* Planet 3 */
+#planet3 {
+  background-image: url('3.png');
+  background-size: cover;
+  background-position: center;
+  top: 60%;
+  left: 40%;
+  height: 100px;
+  width: 100px;
+
+}
+
+/* Planet 4 */
+#planet4 {
+    background-image: url('4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 70%;
+    left: 55%;
+    height: 100px;
+    width: 100px;
+}
+
+/* Planet 5 */
+#planet5 {
+  background-image: url('6.png');
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     
+    top: 55%;  /* Adjusted positioning to avoid overlap */
+    left: 70%; /* Adjusted positioning */
+    height: 120px;
+    width: 120px;
+}
+/* Planet 6 */
+#planet6 {
+  background-image: url('https://static.scientificamerican.com/sciam/cache/file/C454F5A6-536E-4C9F-AA6AF354BB85A85B_source.jpg?w=1200');
+  background-size: cover;
+  background-position: center;
+  top: 40%;
+  left: 80%;
+  height: 100px;
+  width: 100px;
+}
+
+/* Planet 7 */
+#planet7 {
+  background-image: url('—Pngtree—beautiful planet neptune_13147672.png');
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  left: 90%;
+  height: 100px;
+  width: 100px;
+}
+/* Spaceship */
+#spaceship {
+    width: 80px;
+    height: 50px;
+    background: url('https://cdn.pixabay.com/photo/2013/07/12/12/55/ufo-146541_640.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    transition: all 5s ease-in-out;
+}
+/* From Uiverse.io by 1osm */ 
+button {
+    width: 100px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-width: 10px;
+    background: linear-gradient(to right, #e1bebe, #df5656, #ff0101);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+
+    
+    
+  }
+  
+  button svg {
+    height: 40px;
+    width: 60px;
+    transform: translate(-30px,3px) rotate(90deg);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    
+  }
+  
+  button .Click {
+    transform: translate(20px,-33px);
+    font-size: 20px;
+    transition: 0.3s cubic-bezier(0.76, 0, 0.24, 1)
+  }
+  
+  
+  button .OnHover {
+    transform: translate(-15px,-56px);
+    font-size: 20px;
+    opacity: 0%;
+    transition: 0.3s cubic-bezier(0.76, 0, 0.24, 1)
+  }
+  
+  button:hover svg {
+    transform: translate(40px,3px) rotate(90deg);
+  }
+  
+  button:hover .Click {
+    opacity: 0%;
+  }
+  
+  button:hover .OnHover {
+    opacity: 100%;
+  }
+  
+  .next{
+    color: whitesmoke;
+    position: fixed;
+  bottom: 8px;
+  right: 20px;
+  font-size: 25px;
+  }
